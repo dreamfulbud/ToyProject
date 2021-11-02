@@ -19,14 +19,14 @@
    -->
 
   <!-- 건너뛰기 링크 제공하기 -->
-  <a href="#">메뉴 바로가기</a>
-  <a href="#">메인컨텐츠 바로가기</a>
+  <a href="#menu">메뉴 바로가기</a>
+  <a href="#main">메인컨텐츠 바로가기</a>
 
 
   <!-- header -->
   <header>
     <h1>Korea Startup Forum</h1>
-    <nav>
+    <nav id="menu">
       <ul>
         <li><a href="#">Forum</a>
           <!-- 2뎁스 메뉴는 CSS/JS 를 통해 시각적 처리할것(키보드 접근성 포함) -->
@@ -71,7 +71,7 @@
     <a href="#">회원가입</a>
   </header>
 
-  <main>
+  <main id="main">
     <section>
       <h2 class="a11y-hidden">코리아스타트업포럼 주요 소개</h2>
       <ul>
@@ -105,7 +105,6 @@
         국내 최대 스타트업 단체인 코리아스타트업포럼은<span class="br"> </span>
         모든 회원사의 지속적 성장과 생태계 발전을 지원합니다.
       </p>
-      <!-- 정의목록으로...해도 될까..? -->
       <dl>
         <dt>전체 회원사 수</dt>
         <dd>1,707개사</dd>
@@ -329,9 +328,9 @@
       <a href="mailto:hi@kstartupforum.org">hi@kstartupforum.org</a> <a href="tel:02-6211-9400">02-6211-9400</a>
     </address>
     <a href="#">개인정보처리방침</a>
+
     <!-- 링크 -->
     <h3 class="a11y-hidden">자주찾는 페이지</h3>
-
     <ul>
       <li><a href="#">포럼소개</a></li>
       <li><a href="#">회원사 혜택</a></li>
