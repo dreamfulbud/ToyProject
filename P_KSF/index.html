@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Korea Startup Forum</title>
+  <title>Korea Startup</title>
 </head>
 
 <body>
   <!-- 
     사이트의 개선점
-    1. 키보드접근성.
+    1. 키보드접근성을 고려하면 좋을 것 같다!
     2. 포커스위치 알 수 없음.(아웃라인 깨짐)
     3. 이미지 적절한 대체텍스트 제공.
     4. 본언어 표시 ko 변경.
@@ -25,7 +25,7 @@
 
   <!-- header -->
   <header>
-    <h1>Korea Startup Forum</h1>
+    <h1>Korea Startup</h1>
     <nav id="menu">
       <ul>
         <li><a href="#">Forum</a>
@@ -67,26 +67,28 @@
         <li><a href="#">English</a></li>
       </ul>
     </nav>
-    <a href="#">로그인</a>
-    <a href="#">회원가입</a>
+    <ul>
+      <li><a href="#">로그인</a></li>
+      <li><a href="#">회원가입</a></li>
+    </ul>
   </header>
 
   <main id="main">
     <section>
-      <h2 class="a11y-hidden">코리아스타트업포럼 주요 소개</h2>
+      <h2 class="a11y-hidden">한국 스타트업 주요 소개</h2>
       <ul>
         <li>
-          <p>코리아스타트업포럼 소개</p>
+          <p>한국 스타트업 소개</p>
           <p>스타트업의 성장을 도와 세상의 혁신을 이끌어 갑니다.</p>
           <a href="#">자세히 보기</a>
         </li>
         <li>
-          <p>코리아스타트업포럼 정책활동</p>
+          <p>한국 스타트업 정책활동</p>
           <p>스타트업 친화적인 정책제안과 규제 혁신을 통해 변화를 이끌어 갑니다.</p>
           <a href="#">자세히 보기</a>
         </li>
         <li>
-          <p>코리아스타트업포럼 회원사</p>
+          <p>한국 스타트업 회원사</p>
           <p>스타트업의 교류와 연결을 통해 스타트업 생태계의 선순환을 이끌어 갑니다.</p>
           <a href="#">자세히 보기</a>
         </li>
@@ -94,16 +96,18 @@
     </section>
     <section>
       <!--
-          문단구분을 `<br>`로 하는 건 나쁜 사례. 스크린 리더 사용자에게도 문제가 됨.
+          문단구분을 `<br>`로 하는 건 나쁜 사례. 스크린 리더 사용자에게도 문제가 될 수 있음.
           문단은 `<p>` 태그와 CSS 속성을 이용할 것.
-          줄바꿈을 위해서 span 태그를 css display:block 설정할것.
+          반응형을 고려한다면 의도치 않은 줄바꿈이 발생할 수 있음.
+          줄바꿈을 위해서 span 태그를 css display:block 설정하는 방법을 쓰기!
       -->
-      <h2>다양한 스타트업들과 함께하는<span class="br"> </span>
+      <h2 class="a11y-hidden">사업규모</h2>
+      <p>다양한 스타트업들과 함께하는<span class="br"> </span>
         국내 최대 스타트업 단체
-      </h2>
+      </p>
       <p>
-        국내 최대 스타트업 단체인 코리아스타트업포럼은<span class="br"> </span>
-        모든 회원사의 지속적 성장과 생태계 발전을 지원합니다.
+        국내 최대 스타트업 단체인 한국 스타트업은<span class="br"> </span>
+        모든 회원사의 <strong>지속적 성장과 생태계 발전</strong>을 지원합니다.
       </p>
       <dl>
         <dt>전체 회원사 수</dt>
@@ -119,12 +123,13 @@
 
     </section>
     <section>
-      <h2>
+      <h2 class="a11y-hidden">사업분야</h2>
+      <p>
         세상의 혁신을 주도하는<span class="br"> </span>
         다양한 사업 분야 존재
-      </h2>
+      </p>
       <p>
-        코리아스타트업포럼은 여러 사업 분야에 걸쳐 다양한<span class="br"> </span>
+        한국 스타트업은 여러 사업 분야에 걸쳐 다양한<span class="br"> </span>
         사업 모델을 가진 혁신적 스타트업들과 함께 합니다.
       </p>
       <dl>
@@ -147,7 +152,7 @@
         <li>클라우드</li>
       </ul>
       <article>
-        <h3><span class="a11y-hidden">코리아 스타트업포럼 회원사 전체</span> 사업분야</h3>
+        <h3><span class="a11y-hidden">한국 스타트업 회원사 전체</span> 사업분야</h3>
         <ul>
           <li>e커머스&amp;유통 <span>84</span></li>
           <li>패션 &amp; 뷰티 <span>78</span></li>
@@ -173,11 +178,12 @@
       </article>
     </section>
     <section>
-      <h2>
+      <h2 class="a11y-hiddne">회원사 및 재직자 수</h2>
+      <p>
         스타트업과 함께 세상의 변화를 이끌<span class="br"> </span>
         혁신 인재 양성 및 성장 지원
-      </h2>
-      <p>코리아스타트업포럼은 현재 1,707여 스타트업과 혁신 기업이 회원으로 활동하며 세상의 혁신을 이끄는데 동참하고 있습니다.</p>
+      </p>
+      <p>한국 스타트업은 현재 1,707여 스타트업과 혁신 기업이 회원으로 활동하며 세상의 혁신을 이끄는데 동참하고 있습니다.</p>
 
       <dl>
         <dt>회원사 전체 재직자 수</dt>
@@ -185,8 +191,9 @@
       </dl>
     </section>
     <section>
-      <h2>스타트업 생태계의 균형적 발전을 위한<span class="br"> </span>
-        전국 단위 스타트업 네트워크 형성</h2>
+      <h2 class="a11y-hiddne">네트워크</h2>
+      <p>스타트업 생태계의 균형적 발전을 위한<span class="br"> </span>
+        전국 단위 스타트업 네트워크 형성</p>
       <p>각 지역을 기반으로 성장하는 스타트업들을 지원하고스타트업 생태계의 균형적 발전을 도모합니다.</p>
       <!-- 
         <img src="/static/media/main-image03.1e15f7b5.png" alt="">
@@ -214,7 +221,7 @@
       </ul>
     </section>
     <section>
-      <h2 class="a11y-hidden">게시판</h2>
+      <h2 class="a11y-hidden">회사 소식</h2>
       <!--
         논리적 구조를 짜기! 해당 제목의 컨텐츠가 연결되어 보여지는게 접근성상 좋음!
         더보기 버튼은 구조상 해당영역의 끝에 작성. CSS를 통해 위치를 조절할것
@@ -224,28 +231,33 @@
         <h3><button>성장지원</button></h3>
         <ul>
           <li>
-            <a href="">
-              <img src="thumb1-1.jpg" alt="GrowthMeet 단체 사진" />
-              <span class="title">Growth Meet : B (2회)</span>
-              <span>'GrowthMeet:B'프로그램은부산회원사네트워킹의일환으로,코스포및수도권스타트업대표와부산스타트업의교류를지원하는목적으로기획되었습니다.</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="thumb1-2.jpg" alt="코리아 스타트업포럼 5주년 The 창업가 Festival" />
-              <span class="title">
-                코리아스타트업포럼 출범 5주년 기념, 'THE창업가 페스티벌'
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
               </span>
-              <span>2016년9월,스타트업생태계발전을지원하고공동의이익을대변하기위해출범한코스포가올해출범5주년을맞아스타트업의사회적역할과창업가정신을조명하는'THE창업가'캠페인을추진합니다.</span>
             </a>
           </li>
-
           <li>
-            <a href="">
-              <img src="thumb1-3.jpg" alt="기업 맞춤형 SW 현장훈련 강의 자료" />
-              <span class="title">｢기업맞춤형 SW현장훈련(S-OJT)｣ 참여기업 및 외부전문가 모집 기간 연장 안내</span>
-
-              <span>｢기업맞춤형SW현장훈련(S-OJT)｣참여기업및외부전문가모집기간연장안내안녕하십니까,코스포협력사업팀입니다.기업맞춤형SW현장훈련(S-OJT)사업의참여모집기간이연장됨을안내드립니다.</span>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
             </a>
           </li>
         </ul>
@@ -262,24 +274,33 @@
         <h3><button>언론보도</button></h3>
         <ul>
           <li>
-            <a href="">
-              <img src="thumb2-1.jpg" alt="컴업 관계자들의 단체 사진" />
-              <span class="title">컴업 2021, “포스트 코로나 이후 다가올 대전환의 시대… 스타트업의 역할 제시할 것</span>
-              <span>민관이협력해운영하는국내최대스타트업이벤트‘컴업2021(K-StartupWeekComeUp2021,이하컴업)‘이올해도이어진다.2019년첫행사를시작해올해3회를맞.</span>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
             </a>
           </li>
           <li>
-            <a href="">
-              <img src="thumb2-2.jpg" alt="코리아스타트업 포럼 진행 모습" />
-              <span class="title">대한민국이 스타트업하기 좋은 나라가 되려면</span>
-              <span>코리아스타트업포럼(이하코스포)주최로지난20일‘THE창업가콘퍼런스’가개최됐다.코스포5주년을기념하는‘THE창업가캠페인’의일환으로추진된이번콘퍼런스는국내스타트업생태계의현황을살피고향후방향성을모색하는자리로마련됐다.</span>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
             </a>
           </li>
           <li>
-            <a href="">
-              <img src="thumb2-3.jpg" alt="장병규 크래프톤 의장과 이승건 비바리퍼블리카 대표 모습" />
-              <span class="title">장병규 크래프톤 의장과 이승건 비바리퍼블리카 대표가 말하는 한국 스타트업 생태계</span>
-              <span>한국스타트업생태계의상징적인인물두사람이한무대에섰다.코리아스타트업포럼(이하코스포)이20일,출범5주년을기념하는‘THE창업가컨퍼런스’를온라인행사로개최했다.</span>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
             </a>
           </li>
         </ul>
@@ -292,24 +313,33 @@
         <h3><button>공지사항</button></h3>
         <ul>
           <li>
-            <a href="">
-              <img src="thumb3-1.jpg" alt="Korea Startup Forum" />
-              <span class="title">2021.10.20 코스포 5주년 기념행사 개최</span>
-              <span>코리아스타트업포럼,5주년캠페인을소개합니다!행사일시:2021.10.20.(수)13:30~행사장소:@온라인(유튜브&amp;게더타운)THE창업가페스티벌이란</span>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
             </a>
           </li>
           <li>
-            <a href="">
-              <img src="thumb3-2.jpg" alt="코로나19 속 새로운 일상에서도 개인정보보호가 우선입니다. 2021년 개인정보보호 인식주간 캠페인" />
-              <span class="title">개인정보보호 인식주간 캠페인 안내(2021.6.15~6.30)</span>
-              <span>개인정보보호위원회에서APPA(AsiaPacifcPrivacyAuthority)와함께개인정보보호의중요성에대한인식제고를위해매년개인정보보호인식주간(PrivacyAwarenessWeek)을진행하고있습니다.</span>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
             </a>
           </li>
           <li>
-            <a href="">
-              <img src="thumb3-3.jpg" alt="2020 제 15회 대한민국 인터넷대상" />
-              <span class="title">제15회 대한민국 인터넷대상 시상 공모</span>
-              <span>KOREASTARTUPFORUM제15회대한민국인터넷대상시상공모안내주최│과학기술정보통신부공동주관│한국정보방송통신대연합.한국인터넷기업협회공동후원│조선일보.매일경제미디어그룹.코리아스타트업포럼일시장소</span>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
             </a>
           </li>
         </ul>
@@ -319,10 +349,15 @@
   </main>
 
   <footer>
-    <img src="logo.png" alt="Korea Startup Forum" />
-    <address>06628 서울특별시 서초구 강남대로 311 드림플러스 강남 1016호
-      <a href="mailto:hi@kstartupforum.org">hi@kstartupforum.org</a> <a href="tel:02-6211-9400">02-6211-9400</a>
+    <h2 class="a11y-hidden">회사 정보</h2>
+    <img src="logo.png" alt="Korea Startup" />
+
+    <address>
+      <p>12345 서울특별시 서초구 강남대로 12345</p>
+      <a href="mailto:hello@naver.com">hello@naver.org</a>
+      <a href="tel:02-000-000">02-000-0000</a>
     </address>
+
     <a href="#">개인정보처리방침</a>
 
     <!-- 링크 -->
@@ -340,17 +375,17 @@
     <h3 class="a11y-hidden">SNS 링크</h3>
     <ul>
       <li>
-        <a href="https://ko-kr.facebook.com/koreastartupforum/" target="_blank" title="페이스북(새창)">
+        <a href="#" target="_blank" title="페이스북(새창)">
           <img src="facebook.png" alt="facebook">
         </a>
       </li>
       <li>
-        <a href="https://pf.kakao.com/_YxcNej" target="_blank" title="카카오채널(새창)">
-          <img src="kakao.png" alt="카카오채널">
+        <a href="#" target="_blank" title="카카오톡(새창)">
+          <img src="kakao.png" alt="카카오톡">
         </a>
       </li>
     </ul>
-    <p>Copyright 2021. Korea Startup Forum. all rights reserved.</p>
+    <p>Copyright 2021. Korea Startup. all rights reserved.</p>
   </footer>
 </body>
 
