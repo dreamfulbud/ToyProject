@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korea Startup</title>
+</head>
+
+<body>
+  <!-- 
+    사이트의 개선점
+    1. 키보드접근성을 고려하면 좋을 것 같다!
+    2. 포커스위치 알 수 없음.(아웃라인 깨짐)
+    3. 이미지 적절한 대체텍스트 제공.
+    4. 본언어 표시 ko 변경.
+    5. 건너뛰기 링크 제공.
+   -->
+
+  <!-- 건너뛰기 링크 제공하기 -->
+  <a href="#menu">메뉴 바로가기</a>
+  <a href="#main">메인컨텐츠 바로가기</a>
+
+
+  <!-- header -->
+  <header>
+    <h1>Korea Startup</h1>
+    <nav id="menu">
+      <ul>
+        <li><a href="#">Forum</a>
+          <!-- 2뎁스 메뉴는 CSS/JS 를 통해 시각적 처리할것(키보드 접근성 포함) -->
+          <ul>
+            <li><a href="#">소개</a></li>
+            <li><a href="#">출범선언문</a></li>
+            <li><a href="#">연혁</a></li>
+            <li><a href="#">의장 소개</a></li>
+            <li><a href="#">조직도</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">CI</a></li>
+          </ul>
+        </li>
+        <li><a href="#">News</a>
+          <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">성장지원 활동</a></li>
+            <li><a href="#">언론보도</a></li>
+            <li><a href="#">정책활동</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Membership</a>
+          <ul>
+            <li><a href="#">회원사</a></li>
+            <li><a href="#">회원사 혜택</a></li>
+            <li><a href="#">가입안내</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Community</a>
+          <ul>
+            <li><a href="#">산업/지역협의회</a></li>
+            <li><a href="#">협력제안</a></li>
+            <li><a href="#">법률특허 자문단</a></li>
+            <li><a href="#">회원사 제휴/할인</a></li>
+            <li><a href="#">회원사혜택 사용안내</a></li>
+          </ul>
+        </li>
+        <li><a href="#">English</a></li>
+      </ul>
+    </nav>
+    <ul>
+      <li><a href="#">로그인</a></li>
+      <li><a href="#">회원가입</a></li>
+    </ul>
+  </header>
+
+  <main id="main">
+    <section>
+      <h2 class="a11y-hidden">한국 스타트업 주요 소개</h2>
+      <ul>
+        <li>
+          <p>한국 스타트업 소개</p>
+          <p>스타트업의 성장을 도와 세상의 혁신을 이끌어 갑니다.</p>
+          <a href="#">자세히 보기</a>
+        </li>
+        <li>
+          <p>한국 스타트업 정책활동</p>
+          <p>스타트업 친화적인 정책제안과 규제 혁신을 통해 변화를 이끌어 갑니다.</p>
+          <a href="#">자세히 보기</a>
+        </li>
+        <li>
+          <p>한국 스타트업 회원사</p>
+          <p>스타트업의 교류와 연결을 통해 스타트업 생태계의 선순환을 이끌어 갑니다.</p>
+          <a href="#">자세히 보기</a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <!--
+          문단구분을 `<br>`로 하는 건 나쁜 사례. 스크린 리더 사용자에게도 문제가 될 수 있음.
+          문단은 `<p>` 태그와 CSS 속성을 이용할 것.
+          반응형을 고려한다면 의도치 않은 줄바꿈이 발생할 수 있음.
+          줄바꿈을 위해서 span 태그를 css display:block 설정하는 방법을 쓰기!
+      -->
+      <h2 class="a11y-hidden">사업규모</h2>
+      <p>다양한 스타트업들과 함께하는<span class="br"> </span>
+        국내 최대 스타트업 단체
+      </p>
+      <p>
+        국내 최대 스타트업 단체인 한국 스타트업은<span class="br"> </span>
+        모든 회원사의 <strong>지속적 성장과 생태계 발전</strong>을 지원합니다.
+      </p>
+      <dl>
+        <dt>전체 회원사 수</dt>
+        <dd>1,707개사</dd>
+        <dt>회원사 전체 누적투자 규모</dt>
+        <dd>약88,668억원</dd>
+      </dl>
+
+      <!-- 
+        이미지를 설명하는 대체텍스트 제공해 주면 좋을 것 같다!
+      -->
+
+    </section>
+    <section>
+      <h2 class="a11y-hidden">사업분야</h2>
+      <p>
+        세상의 혁신을 주도하는<span class="br"> </span>
+        다양한 사업 분야 존재
+      </p>
+      <p>
+        한국 스타트업은 여러 사업 분야에 걸쳐 다양한<span class="br"> </span>
+        사업 모델을 가진 혁신적 스타트업들과 함께 합니다.
+      </p>
+      <dl>
+        <dt>회원사 전체 사업분야<button>목록 및 개수</button></dt>
+        <!-- 
+          버튼의 UI가 좀더 직관적이면 좋을 것 같다. 
+          버튼의 포커스 아웃라인도 보이게 해주고, 
+          cursor:point; CSS도 넣어서 커서포인트 변화를 주는게 좋을 것 같다!       
+        -->
+        <dd>20개</dd>
+      </dl>
+      <h3 class="a11y-hidden">대표 사업분야</h3>
+      <ul>
+        <li>홈서비스</li>
+        <li>AI</li>
+        <li>핀테크</li>
+        <li>광고&amp;마케팅</li>
+        <li>e커머스&amp;유통</li>
+        <li>클라우드</li>
+        <li>클라우드</li>
+      </ul>
+      <article>
+        <h3><span class="a11y-hidden">한국 스타트업 회원사 전체</span> 사업분야</h3>
+        <ul>
+          <li>e커머스&amp;유통 <span>84</span></li>
+          <li>패션 &amp; 뷰티 <span>78</span></li>
+          <li>클라우드 <span>128</span></li>
+          <li>AI <span>38</span></li>
+          <li>핀테크 <span>53</span></li>
+          <li>하드웨어 &amp; 제조 <span>80</span></li>
+          <li>레저 &amp; 여행 <span>88</span></li>
+          <li>헬스케어 <span>60</span></li>
+          <li>모빌리티 <span>91</span></li>
+          <li>소셜 네트워크 <span>26</span></li>
+          <li>교육 <span>113</span></li>
+          <li>프롭테크 <span>52</span></li>
+          <li>블록체인 <span>27</span></li>
+          <li>푸드 <span>84</span></li>
+          <li>홈서비스 <span>27</span></li>
+          <li>빅데이터 <span>20</span></li>
+          <li>콘텐츠 <span>120</span></li>
+          <li>광고 &amp; 마케팅 <span>109</span></li>
+          <li>스마트 디바이스 (IoT) <span>25</span></li>
+          <li>게임 <span>24</span></li>
+        </ul>
+      </article>
+    </section>
+    <section>
+      <h2 class="a11y-hiddne">회원사 및 재직자 수</h2>
+      <p>
+        스타트업과 함께 세상의 변화를 이끌<span class="br"> </span>
+        혁신 인재 양성 및 성장 지원
+      </p>
+      <p>한국 스타트업은 현재 1,707여 스타트업과 혁신 기업이 회원으로 활동하며 세상의 혁신을 이끄는데 동참하고 있습니다.</p>
+
+      <dl>
+        <dt>회원사 전체 재직자 수</dt>
+        <dd>약 41,932명</dd>
+      </dl>
+    </section>
+    <section>
+      <h2 class="a11y-hiddne">네트워크</h2>
+      <p>스타트업 생태계의 균형적 발전을 위한<span class="br"> </span>
+        전국 단위 스타트업 네트워크 형성</p>
+      <p>각 지역을 기반으로 성장하는 스타트업들을 지원하고스타트업 생태계의 균형적 발전을 도모합니다.</p>
+      <!-- 
+        최근 브라우저의 번역기능이 쓰이고 있는점들을 고려해서 
+        글자가 있는 이미지 사용은 안하는 것이 좋을것 같음!
+        귀찮아도 코딩화하면 좋을 것 같다!
+      -->
+      <h3 class="a11y-hidden">전국 지역별 네트워크 수</h3>
+      <ul>
+        <li>서울 <span>848</span></li>
+        <li>인천 <span>15</span></li>
+        <li>충청도 <span>4</span></li>
+        <li>세종 <span>1</span></li>
+        <li>광주 <span>5</span></li>
+        <li>전라도 <span>5</span></li>
+        <li>제주도 <span>23</span></li>
+        <li>경기도 <span>131</span></li>
+        <li>강원도 <span>2</span></li>
+        <li>대전 <span>9</span></li>
+        <li>대구 <span>23</span></li>
+        <li>울산 <span>1</span></li>
+        <li>부산 <span>127</span></li>
+        <li>경상도 <span>9</span></li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="a11y-hidden">회사 소식</h2>
+      <!--
+        논리적 구조를 짜기! 해당 제목의 컨텐츠가 연결되어 보여지는게 접근성상 좋음!
+        더보기 버튼은 구조상 해당영역의 끝에 작성. CSS를 통해 위치를 조절할것
+      -->
+      <!-- 성장지원 -->
+      <article>
+        <h3><button>성장지원</button></h3>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+        </ul>
+        <a href="#">더보기</a>
+        <!-- 
+          게시글의 텍스트를 너무 많이 가져오는 것 같다.(별도의... 문제는 없는 건가?)
+          태그 정확하게 잘쓰기!!
+          ul의 자식요소는 li만 쓸수 있고 / a 태그의 자식요소는 인라인 요소만 쓸수 있다.        
+        -->
+      </article>
+
+      <!-- 언론보도 -->
+      <article>
+        <h3><button>언론보도</button></h3>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+        </ul>
+        <a href="#">더보기</a>
+      </article>
+
+
+      <!-- 공지사항 -->
+      <article>
+        <h3><button>공지사항</button></h3>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="thumb.jpg" alt="썸네일 이미지를 설명" />
+              <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aperiam.</span>
+              <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eligendi. Cum, nihil vel. Doloremque
+                quo quaerat architecto suscipit culpa porro?
+              </span>
+            </a>
+          </li>
+        </ul>
+        <a href="#">더보기</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <h2 class="a11y-hidden">회사 정보</h2>
+    <img src="logo.png" alt="Korea Startup" />
+
+    <address>
+      <p>12345 서울특별시 서초구 강남대로 12345</p>
+      <a href="mailto:hello@naver.com">hello@naver.org</a>
+      <a href="tel:02-000-000">02-000-0000</a>
+    </address>
+
+    <a href="#">개인정보처리방침</a>
+
+    <!-- 링크 -->
+    <h3 class="a11y-hidden">자주찾는 페이지</h3>
+    <ul>
+      <li><a href="#">포럼소개</a></li>
+      <li><a href="#">회원사 혜택</a></li>
+      <li><a href="#">가입안내</a></li>
+      <li><a href="#">연회비 납부 안내</a></li>
+      <li><a href="#">성장지원 활동</a></li>
+      <li><a href="#">뉴스레터 신청</a></li>
+    </ul>
+
+    <!-- SNS 링크 -->
+    <h3 class="a11y-hidden">SNS 링크</h3>
+    <ul>
+      <li>
+        <a href="#" target="_blank" title="페이스북(새창)">
+          <img src="facebook.png" alt="facebook">
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank" title="카카오톡(새창)">
+          <img src="kakao.png" alt="카카오톡">
+        </a>
+      </li>
+    </ul>
+    <p>Copyright 2021. Korea Startup. all rights reserved.</p>
+  </footer>
+</body>
+
+</html>
