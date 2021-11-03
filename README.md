@@ -1,20 +1,14 @@
-<<<<<<< Updated upstream
 # HTML
-
-https://dreamfulbud.github.io/HTML/
-=======
 https://dreamfulbud.github.io/HTML/
 
 ## snippets 설정
 
 - 설정 > 사용자 코드조각 > "html" > 설정
 - 탭순서 : $1 > $2
-- htmlko 설정
+
 
 ## Emmet
-
 https://docs.emmet.io/cheat-sheet/
-https://dreamfulbud.github.io/HTML/002.html
 
 ## 기초상식
 
@@ -46,4 +40,4 @@ https://dreamfulbud.github.io/HTML/002.html
   - article : 독립적
   - section: 연관
   - main : 사이트의 주요 컨텐츠
->>>>>>> Stashed changes
+
