@@ -171,6 +171,12 @@ main{
     li {width: 100%;}
   }
 }
+@media(max-width:500px){
+  header nav ul li a{
+    padding: 10px 15px; text-align: center;
+    font-size: 0.8em;
+  }
+}
 
 
 footer{
