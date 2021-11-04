@@ -171,12 +171,6 @@ main{
     li {width: 100%;}
   }
 }
-@media(max-width:500px){
-  header nav ul li a{
-    padding: 10px 15px; text-align: center;
-    font-size: 0.8em;
-  }
-}
 
 
 footer{
@@ -222,3 +216,18 @@ footer{
   }
 }
 
+
+@media(max-width:500px){
+  .wrap{  margin:0 auto;  max-width: 100%;
+    border: none; border-radius: 0;
+    padding:15px; 
+  }
+  header h2{ padding-bottom: 20px;}
+  header nav ul li a{
+    padding: 10px 15px; text-align: center;
+    font-size: 0.8em;
+  }
+  main ul{ padding:0; border: none; background-color: transparent; }
+  footer{font-size: 0.8em; background-color: #fff;}
+
+}
