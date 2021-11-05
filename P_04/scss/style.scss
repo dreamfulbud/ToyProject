@@ -1,0 +1,185 @@
+body{ background: skyblue; }
+.grandmother{
+  width:600px; height: 600px; overflow: hidden; margin:0 auto;
+  position: relative;
+  .face{
+    border:8px solid #5b3c27;
+    width:380px; height:320px;
+    background: #d2b48e;
+    border:8px solid #5b3c27;
+    border-radius: 50%;
+    position: absolute;
+    top:33%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  .ear{
+    background: #d2b48e;
+    border:8px solid #5b3c27;
+    width:60px; height:80px; 
+    display: inline-block;
+    position:absolute;
+    top:300px;
+  
+    &::before{ content:''; 
+      display:block; width:48px; height:8px;  background: #5b3c27;;
+      position: absolute; top:35px;
+    }
+  
+    &.left{
+      border-radius: 80px 0 0 80px;
+      transform: rotate(10deg);
+      position:absolute;
+      left:10%;
+      &::before{
+        border-radius: 10px 0 0 10px;
+        right:0;
+      }
+    }
+    &.right{
+      border-radius:0 80px 80px 0;
+      transform: rotate(-10deg);
+      right:10%;
+      &::before{
+        border-radius:0 10px 10px 0;
+        left:0;
+      }
+    } 
+  }
+  .mouth{
+    width:40px; height: 30px; border-radius: 4px 4px 50% 50%;
+    background-color:#D7715F;
+    border: 8px solid  #5b3c27;
+    position: absolute;
+    top:60%;
+    left: 50%;
+    transform:translate(-50%,0);    
+    z-index: 3;
+    &::before{content: ''; display: block; width:8px; height:8px; border-radius: 0 0 4px 4px;
+      background: white; margin-left: 26px;
+    }
+  }
+
+  .cheek{ 
+    width:36px; height: 20px; border-radius: 50%;
+    background-color: #D7715F;
+    position: absolute;
+    top:60%;
+    z-index: 3;
+    &.left{ 
+      left: 24%;    
+    }
+    &.right{
+      right: 24%;
+    }
+  }
+
+  .eye{
+    width:32px; height:16px; border-radius: 4px 4px 30px 30px;
+    background: #5b3c27;
+    top:55%;
+    z-index: 3;
+    overflow: hidden;
+    &::before{ 
+      content: ''; display: block; width:8px; height: 8px; 
+      background-color: white; margin:0 auto; border-radius: 50%;
+      position:absolute; top:2px; left: 8px;
+    }
+    &::after{ 
+      content: ''; display: block; width:6px; height:4px; 
+      background-color: white; margin:0 auto; border-radius: 50%;
+      position:absolute; top:10px; left:16px;
+    }
+    &.left{
+      position:absolute;
+      left:38%;
+      transform: rotate(8deg);
+    }
+    &.right{
+      position:absolute;
+      right:38%;
+      transform: rotate(-8deg);
+    }
+  }
+  .eyebrow{
+    width:30px; height:12px; border-radius: 10px 10px 10px 10px;
+    box-sizing: border-box;
+    background: silver;
+    top:45%;
+    z-index: 3;
+    border:4px solid #5b3c27;
+    &.left{
+      position:absolute;
+      left:38%;
+      transform: rotate(8deg);
+    }
+    &.right{
+      position:absolute;
+      right:38%;
+      transform: rotate(-8deg);
+    }
+  }
+
+  .line{
+    width:200px; height:5px; overflow: hidden;
+    position: absolute;
+    top:40%;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 3;
+    text-decoration: underline wavy;
+    line-height: 2;
+  }
+  .hair{
+    z-index: 2;
+    width: 400px; height:400px;
+    position: relative;
+    margin: 100px auto;
+    border:8px solid #5b3c27;
+    background: silver;
+    border-radius: 50%;
+    overflow: hidden;
+    &::before{content: ''; display: block; width:8px; height: 120px; 
+      position: absolute; top:0; left: 50%; margin-left: -4px;
+      background: #5b3c27; z-index: 2;
+    
+    }
+
+    div{border:8px solid #5b3c27;
+      box-sizing: border-box;
+      background: silver;
+      border-radius: 50%;
+      width:420px; height: 400px;
+      position: absolute;
+      left: -10px;
+    }
+    .circle1{
+      top:15px;
+    }
+    .circle2{
+      top:40px;
+    }
+    .circle3{
+      top:65px;
+    }
+  }
+  .hair2{border:8px solid #5b3c27;
+    background: silver;
+    width:160px; height:120px;    
+    position: absolute;
+    top:5%; left:50%; margin-left: -80px;
+    border-radius: 50%;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+  .pin{background: #5b3c27;
+    width:240px; height:10px;    
+    position: absolute;
+    top:16%; left:50%; margin-left: -120px;
+    border-radius: 5px;
+    z-index: 0;
+  }
+
+}
