@@ -77,7 +77,7 @@ main{
     border-radius: 15px;
     padding:30px;
     background-color: #fff;
-    
+   
     li{ 
       width: 23.5%;
       border: 1px solid #BDBDBD; background-color: #fff;
@@ -161,7 +161,10 @@ main{
 }
 
 @media(max-width:1200px){
-  main ul li {width: 30%;}
+  main ul {
+    &::after{content: '';width: 30%; }
+    li  {width: 30%;}
+  }
 }
 @media(max-width:900px){
   main ul li {width: 48%;}
