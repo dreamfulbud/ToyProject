@@ -6,25 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정글 시네마 영화 목록</title>
-  <link rel="stylesheet" href="./style.compact.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <!-- div 태그는 style 적용을 위해서만.. 최소한으로 사용하기! -->
+  <h1 class="a11y-hidden">정글 시네마</h1>
+
+  <ul class="skip">
+    <li><a href="#menu">메뉴 바로가기</a></li>
+    <li><a href="#movie">현재 상영 영화 바로가기</a></li>
+    <li><a href="#footer">기업정보 바로가기</a></li>
+  </ul>
+
+
   <div class="wrap">
-    <h1 class="a11y-hidden">정글 시네마</h1>
     <header>
       <h2>정글 시네마 영화 목록</h2>
       <nav>
-        <ul>
+        <h3 class="a11y-hidden">영화 정보 목록</h3>
+        <ul id="menu">
           <li class="on"><a href="#">현재상영영화</a></li>
           <li><a href="#">개봉예정영화</a></li>
           <li><a href="#">박스오피스</a></li>
         </ul>
       </nav>
     </header>
-    <!-- main 태그는 한번만 사용 가능! / article 안에 main태그는 안됨! -->
-    <main>
+    <!-- main 태그는 한번만 사용 가능! / article, section 안에 main태그는 안됨! -->
+    <main id="movie">
       <h3 class="a11y-hidden">현재 상영 영화 목록</h3>
       <ul>
         <li>
@@ -278,13 +286,10 @@
       </ul>
     </main>
   </div>
-
-
-  <footer>
-    <div class="inner">
+  <footer id="footer">
+    <section class="inner">
       <h2 class="a11y-hidden">기업정보</h2>
       <p><strong>Jungle Cinema</strong></p>
-
       <div class="info">
         <dl>
           <div>
@@ -308,7 +313,7 @@
             <dd>서울특별시</dd>
           </div>
         </dl>
-        <p>ⓒ The Jungle</p>
+        <p><small>ⓒ The Jungle</small></p>
       </div>
 
       <h3 class="a11y-hidden">SNS 목록</h3>
@@ -317,7 +322,7 @@
         <li><a href="#"><img src="./img/sns_instagram.png" alt="instagram" /></a></li>
         <li><a href="#"><img src="./img/sns_twitter.png" alt="twitter" /></a></li>
       </ul>
-    </div>
+    </section>
   </footer>
 </body>
 

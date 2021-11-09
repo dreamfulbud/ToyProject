@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 로그인</title>
+  <style>
+    body,
+    ul,
+    li,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    /* 접근성을 고려한 화면 감춤 */
+    .a11y-hidden {
+      overflow: hidden;
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+    }
+
+    .login-wrap {
+      background: #f7f9fa;
+      border: 1px solid #dae1e6;
+      padding: 16px;
+      width: 300px;
+      margin: 50px auto;
+    }
+
+    p {
+      color: gray;
+      font-size: 12px;
+    }
+
+    .btn-green {
+      background: #19ce60;
+      border: 1px solid #15c654;
+      color: #fff;
+      margin: 11px 0;
+      display: block;
+      width: 100%;
+      padding: 17px 0 13px 0;
+      text-align: center;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .btn-green img {
+      height: 0.8em;
+      margin-right: 0.2em;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ul {
+      padding-left: 12px;
+      background: url(./images/lock.png) no-repeat 0 40%;
+      background-size: 10px;
+    }
+
+    ul li a {
+      color: #404040;
+      font-size: 12px;
+      display: inline-block;
+      padding: 2px;
+    }
+
+    .find-id::after {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 2px;
+      border-radius: 1px;
+      margin: 0 4px;
+      background: gray;
+      vertical-align: middle;
+    }
+
+    .join {
+      text-align: right;
+      flex-grow: 2;
+    }
+
+    .join a {
+      background: url(./images/user.png) no-repeat 0 40%;
+      padding-left: 13px;
+      background-size: 11px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="a11y-hidden">네이버</h1>
+  <article class="login-wrap">
+    <h2 class="a11y-hidden">로그인</h2>
+    <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+
+    <a href="#" class="btn-green"><img src="./images/title.png" alt="NAVER"> 로그인</a>
+    <ul>
+      <li class="find-id"><a href="#">아이디 <span class="a11y-hidden">찾기</span></a></li>
+      <li class="find-pw"><a href="#">비밀번호 찾기</a></li>
+      <li class="join"><a href="#">회원가입</a></li>
+    </ul>
+
+  </article>
+
+</body>
+
+</html>
