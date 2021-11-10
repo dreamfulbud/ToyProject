@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Vitro_core';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes rotate {
+  form{ transform: rotate(0);}
+  to{ transform: rotate(360deg);}
+  
+}
+@keyframes rotate2 {
+  form{ transform: rotate(68deg);}
+  to{ transform: rotate(360deg);}
+}
+@keyframes rotate3 {
+  form{ transform: rotate(-45deg);}
+  to{ transform: rotate(360deg);}
+}
+
+
+html{font-size: 10px;}
+body{
+  background: royalblue;
+  text-align: center;
+  color:#fff;
+  font-family: 'Pretendard-Regular';
+  font-size: 1.6rem;
+}
+.wrap{ width:1000px; max-width:100%; box-sizing:border-box; padding:0 30px; margin: 0 auto;}
+header{ position: relative; width:100%; margin:50px 0;
+  h1{
+    width:100%;
+    font-family: 'Vitro_core'; 
+    font-size: 4em;
+    color:#2458DC;
+    -webkit-text-stroke: 2px gold;
+    text-shadow: 5px 5px 0 gold,  4px 4px 0 gold ,  3px 3px 0 gold, 2px 2px 0 gold;
+    position: absolute; top:40%; left: 50%; z-index: 2; transform:translateX(-50%) skewX(-25deg) rotate(-5deg);
+    strong{color:#37A9FF;}
+  }
+  .oclock{ width:200px; height:200px; border: 16px double #fff; border-radius: 50%; opacity: 0.5;
+    position:relative; margin:0 auto;
+    &::before{content: ''; display: block; width:16px; height:16px; background: #fff;
+      border-radius: 50%; position:absolute; top:50%; left: 50%; transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px 1px rgba(37, 39, 156, 0.5); z-index: 4;
+    }
+    .dot{  width:100%; height: 100%; position: relative;
+      div{ width:100%; height:8px; display: flex; justify-content: space-between; 
+        transform-origin: center; top:50%; left:0; margin-top:-4px;
+        position: absolute; 
+        &::before,
+        &::after{content:'';display: block; width:8px; height:8px;background: #fff; border-radius: 50%;}
+      }
+      div:nth-child(1){ transform:rotate(0deg) translateY(50%);}
+      div:nth-child(2){ transform:rotate(30deg) translateY(50%);}
+      div:nth-child(3){ transform:rotate(60deg) translateY(50%);}
+      div:nth-child(4){ transform:rotate(90deg) translateY(50%);}
+      div:nth-child(5){ transform:rotate(120deg) translateY(50%);}
+      div:nth-child(6){ transform:rotate(150deg) translateY(50%);}
+    }
+    .hour, .min, .sec{
+      border-radius: 4px; background: #fff; 
+      position:absolute; left:50%; transform-origin: bottom;
+      box-shadow: 0 0 5px 1px rgba(37, 39, 156, 0.5);
+    }
+    .hour{ width:10px; height: 40px; border-radius: 4px; background: #fff;
+      margin-top:-20px; margin-left: -5px; top:80px;
+      transform: rotate(-45deg);
+      animation: rotate3 2880s linear infinite;
+      z-index: 1;
+    }
+    .min{ width:6px; height:80px; margin-left: -3px; top:20px;
+      transform: rotate(68deg);
+      animation: rotate2 120s linear infinite;
+      z-index: 2;
+    }
+    .sec{ width:2px; height:80px; margin-left: -1px; top:20px;
+      transform: rotate(0); 
+      animation: rotate 2s linear infinite;
+      z-index: 3;
+    }
+  }
+}
+
+
+
+.gold{ font-size: 1.4em; color:gold; font-family: 'Vitro_core'; }
+.term{ width:300px; margin: 0 auto; word-break: keep-all; line-height: 1.6;}
+.box{ border: 2px solid skyblue; padding:2em;}
+
+input{border: none; border-radius: 4px; height: 40px; padding:0 10px; margin:0 10px;
+  text-align: center; font-size: 20px;  font-family: inherit; font-weight: bold;
+  &[type="number"]::-webkit-inner-spin-button{ opacity: 1;}
+  &::placeholder{color:#ccc; font-weight: normal;}
+  
+}
+
+.btn{
+  background: gold; border: none; font-size: 1.4em; padding:0.5em 2em;
+  border-radius: 10px; letter-spacing: -1px;
+  box-shadow: 0 4px 0 goldenrod;
+  font-family: 'Vitro_core';
+  color:#2458DC;
+  width:350px;
+}
+
+@media(max-width:600px){
+  html{font-size: 8px;}
+}
