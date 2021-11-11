@@ -12,16 +12,16 @@
 }
 
 @keyframes rotate {
-  form{ transform: rotate(0);}
+  from{ transform: rotate(0);}
   to{ transform: rotate(360deg);}
   
 }
 @keyframes rotate2 {
-  form{ transform: rotate(68deg);}
+  from{ transform: rotate(68deg);}
   to{ transform: rotate(360deg);}
 }
 @keyframes rotate3 {
-  form{ transform: rotate(-45deg);}
+  from{ transform: rotate(-45deg);}
   to{ transform: rotate(360deg);}
 }
 
@@ -30,6 +30,9 @@
   overflow:hidden; position:absolute; clip:rect(0,0,0,0); 
   width:1px; height:1px; margin:-1px; border:0;padding:0;
 }
+*{ word-break: keep-all;}
+legend{border:none;}
+
 
 html{font-size: 10px;}
 body{
@@ -38,9 +41,12 @@ body{
   color:#fff;
   font-family: 'Pretendard-Regular';
   font-size: 1.6rem;
+  line-height: 1.6;
 }
+
 .wrap{ width:1000px; max-width:100%; box-sizing:border-box; padding:0 30px; margin: 0 auto;}
-*{ word-break: keep-all;}
+
+// 헤더 :: 1만시간의 법칙
 header{ position: relative; width:100%; margin:50px 0;
   h1{
     width:100%;
@@ -52,7 +58,7 @@ header{ position: relative; width:100%; margin:50px 0;
     position: absolute; top:40%; left: 50%; z-index: 2; transform:translateX(-50%) skewX(-25deg) rotate(-5deg);
     strong{color:#37A9FF;}
   }
-  .oclock{ width:200px; height:200px; border: 16px double #fff; border-radius: 50%; opacity: 0.5;
+  .clock{ width:200px; height:200px; border: 16px double #fff; border-radius: 50%; opacity: 0.5;
     position:relative; margin:0 auto;
     &::before{content: ''; display: block; width:16px; height:16px; background: #fff;
       border-radius: 50%; position:absolute; top:50%; left: 50%; transform: translate(-50%, -50%);
@@ -96,35 +102,50 @@ header{ position: relative; width:100%; margin:50px 0;
   }
 }
 
-.gold{ 
-  font-size: 1.4em; color:gold; font-family: 'Vitro_core'; padding:0; margin:10px auto;
-  max-width: 90%;
-}
-.term{ width:300px; max-width: 90%; margin: 0 auto; line-height: 1.6;}
+// section :: 훈련시간 입력
+section{ margin:20px auto;
+  .gold{ 
+    font-size: 1.4em; color:gold; font-family: 'Vitro_core'; padding:0; 
+    margin:0 auto 20px auto;
+    max-width: 90%;
+  }
+  .term{ width:300px; max-width: 90%; margin: 0 auto; line-height: 1.6;
+    margin:10px auto;
+    position: relative;
+    &::before, &::after{
+      position:  absolute;
+      font-family: 'Vitro_core'; font-size: 32px;    
+    }
+    &:before{content: '\201C'; top:0%; left:-30px;}
+    &:after{content: '\201D'; bottom:0%; right:-30px;} 
+  }
 
-input{border: none; border-radius: 4px; height: 40px; padding:0 10px; margin:0 10px;
-  text-align: center; font-size: 20px;  font-family: inherit; font-weight: bold;
-  max-width:160px;
-  &[type="number"]::-webkit-inner-spin-button{ opacity: 1;}
-  &::placeholder{color:#ccc; font-weight: normal;}
-}
 
-.btn{
-  background: gold; border: none; font-size: 1.4em; padding:0.5em 2em;
-  border-radius: 10px; letter-spacing: -1px;
-  box-shadow: 0 4px 0 goldenrod;
-  font-family: 'Vitro_core';
-  color:#2458DC;
-  width:350px; max-width: 100%;
-}
+  form{ margin:40px auto;
+    p {margin-bottom: 16px;}
+  }
+  input{border: none; border-radius: 4px; height: 40px; padding:0 10px; margin:0 10px;
+    text-align: center; font-size: 20px;  font-family: inherit; font-weight: bold;
+    max-width:160px;
+    &[type="number"]::-webkit-inner-spin-button{ opacity: 1;}
+    &::placeholder{color:#ccc; font-weight: normal;}
+  }
 
-footer{
-  p{font-size: 12px;}
+  .btn{
+    background: gold; border: none; font-size: 1.4em; padding:0.5em 2em;
+    border-radius: 10px; letter-spacing: -1px;
+    box-shadow: 0 4px 0 goldenrod;
+    font-family: 'Vitro_core';
+    color:#2458DC;
+    width:350px; max-width: 100%;
+  }
+}
+footer{ 
+  h2{ font-size:24px; font-weight: bold; margin:10px 0;}
+  small{font-size: 12px;}
 }
 
 @media(max-width:600px){
-
   header h1{ font-size: 50px;}
-  input{ display: block; margin: 10px auto;}
-
+  section input{ display: block; margin: 10px auto;}
 }

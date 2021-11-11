@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1만 시간의 법칙</title>
+  <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -13,7 +14,7 @@
   <div class="wrap">
     <header>
       <h1><strong>1만</strong> 시간의 법칙</h1>
-      <div class="oclock">
+      <div class="clock">
         <div class="hour"></div>
         <div class="min"></div>
         <div class="sec"></div>
@@ -27,32 +28,42 @@
         </div>
       </div>
     </header>
+
     <section>
       <h2 class="a11y-hidden">훈련시간 계산하기</h2>
-      <blockquote class="gold">&ldquo; 연습은 어제의 당신보다 당신을 더 낫게 만든다 &rdquo;</blockquote>
+      <p class="gold">&ldquo; 연습은 어제의 당신보다 당신을 더 낫게 만든다 &rdquo;</p>
 
       <p class="term">
-        <strong>1만 시간의 법칙</strong>은
+        <strong>1만 시간의 법칙</strong>은<br />
         어떤 분야의 전문가가 되기 위해서는
         최소한 1만 시간의 훈련이 필요하다는 법칙이다.
       </p>
 
-      <p>
-        나는
-        <label for="job" class="a11y-hidden">되고싶은 전문가</label>
-        <input type="text" id="job" placeholder="예)프로그래밍" />
-        전문가가 될 것이다.
-      </p>
-      <p>
-        그래서 앞으로 매일 하루에
-        <label for="time" class="a11y-hidden">훈련시간</label>
-        <input type="number" id="time" value="1" min="1" max="24" />
-        시간씩 훈련할 것이다.
-      </p>
-      <button class="btn">
-        나는 며칠 동안 훈련을 해야 1만 시간이 될까?
-      </button>
-
+      <form>
+        <fieldset>
+          <p>
+            나는
+            <label for="job" class="a11y-hidden">되고싶은 전문가</label>
+            <input type="text" id="job" placeholder="예)프로그래밍" />
+            전문가가 될 것이다.
+          </p>
+          <p>
+            그래서 앞으로 매일 하루에
+            <label for="time" class="a11y-hidden">훈련시간</label>
+            <input type="number" id="time" value="1" min="1" max="24" />
+            시간씩 훈련할 것이다.
+          </p>
+          <button class="btn">
+            나는 며칠 동안 훈련을 해야 1만 시간이 될까?
+          </button>
+          <!--
+            초기화버튼도 넣어보자
+          <button type="reset" class="btn">
+            Reset
+          </button>
+          -->
+        </fieldset>
+      </form>
       <!-- 
         <section>
           <h2 class="a11y-hidden">계산된 훈련시간</h2>
@@ -69,8 +80,8 @@
     </section>
     <footer>
       <h2>weniv</h2>
-      <p>※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.</p>
-      <p>수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</p>
+      <small>※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.<br />
+        수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</small>
     </footer>
   </div>
 </body>
