@@ -70,6 +70,10 @@ body {
   margin: 0 auto;
 }
 
+* {
+  word-break: keep-all;
+}
+
 header {
   position: relative;
   width: 100%;
@@ -79,7 +83,8 @@ header {
 header h1 {
   width: 100%;
   font-family: 'Vitro_core';
-  font-size: 4em;
+  font-size: 60px;
+  text-align: center;
   color: #2458DC;
   -webkit-text-stroke: 2px gold;
   text-shadow: 5px 5px 0 gold,  4px 4px 0 gold ,  3px 3px 0 gold, 2px 2px 0 gold;
@@ -216,18 +221,16 @@ header .oclock .sec {
   font-size: 1.4em;
   color: gold;
   font-family: 'Vitro_core';
+  padding: 0;
+  margin: 10px auto;
+  max-width: 90%;
 }
 
 .term {
   width: 300px;
+  max-width: 90%;
   margin: 0 auto;
-  word-break: keep-all;
   line-height: 1.6;
-}
-
-.box {
-  border: 2px solid skyblue;
-  padding: 2em;
 }
 
 input {
@@ -240,6 +243,7 @@ input {
   font-size: 20px;
   font-family: inherit;
   font-weight: bold;
+  max-width: 160px;
 }
 
 input[type="number"]::-webkit-inner-spin-button {
@@ -262,10 +266,19 @@ input::placeholder {
   font-family: 'Vitro_core';
   color: #2458DC;
   width: 350px;
+  max-width: 100%;
+}
+
+footer p {
+  font-size: 12px;
 }
 
 @media (max-width: 600px) {
-  html {
-    font-size: 8px;
+  header h1 {
+    font-size: 50px;
+  }
+  input {
+    display: block;
+    margin: 10px auto;
   }
 }
