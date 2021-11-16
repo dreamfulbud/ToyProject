@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>펭수 움직이기</title>
+  <style>
+    @keyframes frame {
+      0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+      }
+
+      100% {
+        transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg);
+      }
+    }
+
+    @keyframes moving {
+      0% {
+        margin-top: -40px;
+        margin-left: 10px;
+        transform: rotateX(-90deg) rotateY(65deg) rotateZ(15deg) translateZ(-30px) scale(0.9, 1.1);
+      }
+
+      100% {
+        margin-top: -10px;
+        margin-left: 40px;
+        transform: rotateX(-90deg) rotateY(65deg) rotateZ(15deg) translateZ(-30px) scale(1);
+      }
+    }
+
+
+    body {
+      background: rgb(188, 236, 255);
+    }
+
+    h1 {
+      text-align: center;
+      color: #268bff;
+      text-shadow: 1px 1px 1px #fff;
+      margin: 30px auto;
+    }
+
+    h1 strong {
+      color: #124dbb;
+    }
+
+    .warp {
+      width: 600px;
+      margin: 50px auto 0;
+    }
+
+    .section-board {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      transform-style: preserve-3d;
+      /* transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg); */
+      animation: frame 1s ease forwards;
+    }
+
+    .board-item {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      transition: all 0.3s;
+      transform-style: preserve-3d;
+    }
+
+    .board-item:hover {
+      top: -10px;
+      left: -10px;
+    }
+
+    .board-item::after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(1, 85, 182, 0.8);
+      border: 2px solid rgba(1, 85, 182, 1);
+      box-sizing: border-box;
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+
+    .board-item:hover::after {
+      top: 20px;
+      left: 20px;
+    }
+
+    .board-item label {
+      border-radius: 10px;
+      cursor: pointer;
+      background: #B6D8FF;
+    }
+
+
+    .board-item:nth-child(3n) label {
+      background: linear-gradient(135deg, #5FB7FF 0%, #BAEBFF 35%, #c8edfc 40%, #BAEBFF 45%, #71bfff 100%)
+    }
+
+    .board-item:nth-child(3n-1) label {
+      background: linear-gradient(135deg, #5cd1ff 0%, #B9E6FF 30%, #DCF1FF 40%, #B9E6FF 50%, #5cd1ff 100%)
+    }
+
+    .board-item:nth-child(3n-2) label {
+      background: linear-gradient(135deg, #58a6ff 0%, #B4D7FF 30%, #99C8FF 40%, #B4D7FF 60%, #2589FF 100%)
+    }
+
+    .board-item input {
+      position: absolute;
+      appearance: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+
+    }
+
+    .board-item input:focus,
+    .board-item input:hover {
+      box-shadow: 0 0 40px 5px rgba(0, 255, 221, 0.8);
+    }
+
+    .board-item label {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+
+    }
+
+    .board-item input:checked+label {
+      font-weight: bold;
+      transform-style: preserve-3d;
+    }
+
+    .board-item label::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      clip-path: circle(70%);
+      top: 0;
+      left: 0;
+      background: url(./pengsoo.png) no-repeat 50% 50%;
+      background-size: contain;
+      transform: rotateX(-90deg) rotateY(65deg) rotateZ(15deg) translateZ(-30px);
+      transform-origin: bottom;
+      opacity: 0;
+      transition: opacity 0.3s;
+      animation: moving 0.5s alternate infinite;
+    }
+
+    .board-item input:checked+label::after {
+      opacity: 1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1><strong>펭수</strong>를 움직여보세요!</h1>
+  </header>
+  <div class="warp">
+
+    <section class="section-board">
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-1" checked />
+        <label for="radio-1"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-2" />
+        <label for="radio-2"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-3" />
+        <label for="radio-3"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-4" />
+        <label for="radio-4"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-5" />
+        <label for="radio-5"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-6" />
+        <label for="radio-6"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-7" />
+        <label for="radio-7"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-8" />
+        <label for="radio-8"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-9" />
+        <label for="radio-9"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-10" />
+        <label for="radio-10"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-11" />
+        <label for="radio-11"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-12" />
+        <label for="radio-12"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-13" />
+        <label for="radio-13"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-14" />
+        <label for="radio-14"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-15" />
+        <label for="radio-15"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-16" />
+        <label for="radio-16"></label>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
