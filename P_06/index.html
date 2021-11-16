@@ -27,14 +27,12 @@
       <form action="" method="POST">
         <fieldset>
           <label for="user-id" class="a11y-hidden">아이디</label>
-          <input type="text" id="user-id" placeholder="아이디" required />
-          <!-- class="error" -->
-          <!-- <p class="error-text">아이디를 입력해 주세요</p> -->
+          <input type="text" id="user-id" placeholder="아이디" class="error" required />
+          <strong class="error-text">아이디를 입력해 주세요</strong>
 
           <label for="user-pw" class="a11y-hidden">비밀번호</label>
           <input type="password" id="user-pw" placeholder="비밀번호" required />
-          <!-- class="error" -->
-          <!--<p class="error-text">아이디 혹은 비밀번호가 일치하지 않습니다.</p>-->
+          <!--<strong class="error-text">아이디 혹은 비밀번호가 일치하지 않습니다.</strong>-->
 
           <p class="check">
             <input type="checkbox" id="login-check"><label for="login-check">로그인 상태 유지</label>
@@ -54,7 +52,7 @@
         <li><a href="#" class="btn btn-kakao">카카오톡 계정으로 로그인</a></li>
       </ul>
     </div>
-    <button type="button" class="btn-close"><img src="./img/close.svg" alt="닫기" /></button>
+    <button type="button" class="btn-close"><img src="./img/close.svg" alt="로그인 창 닫기" /></button>
   </article>
 
 </body>

@@ -122,8 +122,7 @@ button {
 }
 
 .login-modal .check input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
   background: url(./img/checkbox.svg) no-repeat 50% 50%;
   width: 22px;
   height: 22px;
@@ -142,6 +141,7 @@ button {
 }
 
 .error-text {
+  display: block;
   color: #F4492E;
   font-size: 14px;
   margin-top: 8px;
