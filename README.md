@@ -1,6 +1,12 @@
 # HTML
 
-https://dreamfulbud.github.io/HTML-CSS/
+- [정글 시네마 영화 목록] https://dreamfulbud.github.io/HTML-CSS/P_02/
+- [라이캣 애니메이션] https://dreamfulbud.github.io/HTML-CSS/P_03/
+- [할미 캐릭터 애니메이션] https://dreamfulbud.github.io/HTML-CSS/P_04/
+- [1만 시간의 법칙] https://dreamfulbud.github.io/HTML-CSS/P_05/
+- [로그인 모달창] https://dreamfulbud.github.io/HTML-CSS/P_06/
+- [얼음 위 펭수] https://dreamfulbud.github.io/HTML-CSS/P_07/
+- [쿨찐테스트] https://dreamfulbud.github.io/HTML-CSS/P_08/index.html
 
 ## snippets 설정
 
