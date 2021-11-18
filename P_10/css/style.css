@@ -157,6 +157,46 @@ header .app-tit {
   align-items: center;
 }
 
+.list-item .btn-item.select {
+  box-shadow: 0 0 0 3px #6327FE;
+}
+
+.list-item .btn-item.out {
+  position: relative;
+  cursor: default;
+}
+
+.list-item .btn-item.out .sold-out {
+  font-weight: bold;
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  margin-left: -2.6rem;
+  width: 5.1rem;
+  height: 2.7rem;
+  padding: 1px;
+  color: #fff;
+  transform: rotate(-18deg);
+  z-index: 1;
+  font-size: 1.4rem;
+  color: #EAE8FE;
+  border: 5px double #EAE8FE;
+}
+
+.list-item .btn-item.out .sold-out::before {
+  content: '';
+}
+
+.list-item .btn-item.out::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .cont-return {
   margin-top: 2rem;
 }
@@ -257,8 +297,15 @@ header .app-tit {
     grid-template-columns: 1fr;
     gap: 0;
     margin-top: 1.8rem;
+    margin-bottom: 0;
   }
   .vending-machine > div {
     width: 100%;
+  }
+  .machine {
+    padding: 0 2.7rem;
+  }
+  .cont-myitems {
+    border-top: 0;
   }
 }
