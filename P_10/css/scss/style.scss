@@ -1,4 +1,10 @@
 * {box-sizing: border-box;}
+button, input{
+  &:focus{
+    outline:  3px auto #6FCF97;
+    box-shadow: 0 0 3px 2px #6FCF97;
+  }
+}
 html{
   font-size: 10px;
 }
@@ -114,6 +120,7 @@ header{
   .btn-item{
     flex-direction: column;
     padding:1.1rem;
+    overflow:hidden;      
     img{height:6.5rem;}
     .tit-item{ font-size: 0.9rem; margin-top:0.6rem;}
     .txt-item{ 

@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+button:focus, input:focus {
+  outline: 3px auto #6FCF97;
+  box-shadow: 0 0 3px 2px #6FCF97;
+}
+
 html {
   font-size: 10px;
 }
@@ -154,6 +159,7 @@ header .app-tit {
 .list-item .btn-item {
   flex-direction: column;
   padding: 1.1rem;
+  overflow: hidden;
 }
 
 .list-item .btn-item img {
