@@ -109,7 +109,7 @@ header .app-tit {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.8rem;
-  margin: 67px auto;
+  margin: 6.7rem auto;
 }
 
 .vending-machine > div {
@@ -291,6 +291,10 @@ header .app-tit {
 @media (max-width: 768px) {
   body {
     background: #fff;
+  }
+  header .app-tit {
+    width: 18.8rem;
+    height: 8.8rem;
   }
   .vending-machine {
     width: 100%;
