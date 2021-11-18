@@ -58,7 +58,7 @@ body {
   background: #EAE8FE;
   border: 1px solid #BDBDBD;
   padding: 1.2rem;
-  overflow-y: scroll;
+  overflow: auto;
   border-radius: 5px;
   /* 스크롤바 설정*/
   /* 스크롤바 막대 설정*/
