@@ -162,10 +162,8 @@ button{cursor: pointer;}
     }
   }
   label { 
-    display: block;  
     text-align: left; 
     cursor: pointer;
-
 
     &::before{
       display: inline-block;

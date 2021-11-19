@@ -315,7 +315,6 @@ button {
 }
 
 .check label {
-  display: block;
   text-align: left;
   cursor: pointer;
 }
