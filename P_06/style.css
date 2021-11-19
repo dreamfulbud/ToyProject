@@ -290,56 +290,47 @@ button {
 }
 
 .check {
-  margin: 1.6rem 0 1.5rem 0;
+  margin: 1.6rem 0 1.6rem 0;
 }
 
 .check input[type="checkbox"] {
-  appearance: none;
-  background: url(./img/checkbox.svg) no-repeat 50% 50%;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin: 0 0.7rem 0.3rem 0.5rem;
-  transition: all 0.3s;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 }
 
-.check input[type="checkbox"]:checked {
-  background: url(./img/checked.svg) no-repeat 50% 50%;
+.check input[type="checkbox"]:focus + label::before {
+  outline: 2px auto -webkit-focus-ring-color;
+  border-radius: 50%;
+  outline-offset: 2px;
+}
+
+.check input[type="checkbox"]:checked + label::before {
+  background-image: url("./img/checked.svg");
 }
 
 .check label {
+  display: block;
+  text-align: left;
   cursor: pointer;
 }
 
-/*
-.check{ margin: 1.6rem 0 1.6rem 0;
-  input[type="checkbox"]{
-    overflow:hidden; position:absolute; clip:rect(0,0,0,0); 
-    width:1px; height:1px; margin:-1px; border:0;padding:0;
-
-    &:checked + label::before{
-      background-image: url("./img/checked.svg");
-    }
-  }
-  label { 
-    display: block;  
-    text-align: left; 
-    cursor: pointer;
-
-    &::before{
-      display: inline-block;
-      content:'';
-      width:22px;
-      height:22px;
-      margin-right:0.5rem;
-      background-image: url("./img/checkbox.svg");
-      vertical-align: -0.5rem;
-      transition: 0.3s;
-    }  
-  }
+.check label::before {
+  display: inline-block;
+  content: '';
+  width: 22px;
+  height: 22px;
+  margin-right: 0.5rem;
+  background-image: url("./img/checkbox.svg");
+  vertical-align: -0.5rem;
+  transition: background-image 0.3s;
 }
-*/
+
 @media (max-height: 720px) {
   html {
     font-size: 9px;
@@ -350,5 +341,17 @@ button {
     top: 0;
     left: 0;
     margin: 15px auto;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 8px;
   }
 }
