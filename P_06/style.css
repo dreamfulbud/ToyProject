@@ -43,7 +43,6 @@ button {
 
 .login-box {
   width: 500px;
-  height: 240px;
   border: 1px solid #C4C4C4;
   padding: 31px 30px;
   text-align: center;
@@ -53,6 +52,7 @@ button {
   transform: translate(-50%, -50%);
   border-radius: 5px;
   background-color: #fff;
+  z-index: 0;
 }
 
 .login-box p {
@@ -61,6 +61,13 @@ button {
 
 .login-modal {
   display: none;
+}
+
+.login-modal.is-active {
+  display: block;
+}
+
+.login-modal .inner {
   width: 520px;
   position: absolute;
   top: 50%;
@@ -70,10 +77,7 @@ button {
   border-radius: 10px;
   border: 1px solid #C4C4C4;
   font-size: 16px;
-}
-
-.login-modal.is-active {
-  display: block;
+  z-index: 10;
 }
 
 .login-modal .login-title {
@@ -138,6 +142,20 @@ button {
 
 .login-modal .check label {
   cursor: pointer;
+}
+
+.login-modal::after {
+  content: '';
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
 }
 
 .error-text {
@@ -221,14 +239,26 @@ button {
   display: block;
   text-align: center;
   color: #767676;
+  transition: background-color 0.3s;
 }
 
-.btn-blue {
+.btn:hover {
+  color: #000;
+}
+
+.btn-yellow {
   font-family: 'SpoqaHanSansNeo-Medium';
-  color: #fff;
-  background: #2F80ED;
+  color: #222B2F;
+  background: #FDD65F;
   border: none;
   font-size: 18px;
+  transition: 0.3s;
+  border: 1px solid #FFCF3C;
+}
+
+.btn-yellow:hover {
+  background: #FFCF3C;
+  border: 1px solid #FEB030;
 }
 
 .btn-large {
@@ -240,8 +270,17 @@ button {
   background: url(./img/google.svg) no-repeat 11px 50%;
 }
 
+.btn-google:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .btn-facebook {
+  border-color: #2D9CDB;
   background: url(./img/facebook.svg) no-repeat 11px 50%;
+}
+
+.btn-facebook:hover {
+  background-color: rgba(45, 156, 219, 0.1);
 }
 
 .btn-naver {
@@ -249,7 +288,15 @@ button {
   background: url(./img/naver.svg) no-repeat 11px 50%;
 }
 
+.btn-naver:hover {
+  background-color: rgba(0, 191, 24, 0.1);
+}
+
 .btn-kakao {
   border-color: #F2C94C;
   background: url(./img/kakao.svg) no-repeat 11px 50%;
+}
+
+.btn-kakao:hover {
+  background-color: rgba(242, 201, 76, 0.1);
 }
