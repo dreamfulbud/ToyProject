@@ -1,9 +1,32 @@
+$font:'Noto Sans KR';
+$color-bg-purple: #EAE8FE;
+$color-purple: #6327FE;
+$color-gray1: #BDBDBD;
+$color-green: #6FCF97;
+$color-white: #fff;
+
+@mixin border($width:1px, $style: solid, $color: $color-gray1){
+  border: $width $style $color;
+}
+@mixin border-direction($direction, $width:1px, $style: solid, $color: $color-gray1){
+  border-#{$direction}: $width $style $color;
+}
+@mixin border-radius($round : 0.5rem){
+  border-radius: $round;
+}
+
+@mixin flex($horizon: center, $vertical: center){
+  display: flex;
+  justify-content: $horizon;
+  align-items: $vertical;
+}
+
 html{
   font-size: 10px;
 }
 body{
-  background: #EAE8FE;
-  font-family: 'Noto Sans KR';
+  background: $color-bg-purple;
+  font-family: $font;
   font-size: 1.6rem;
 }
 * {box-sizing: border-box;}
@@ -11,8 +34,8 @@ body{
 /* 포커스 설정 */
 button, input{
   &:focus{
-    outline:  3px auto #6FCF97;
-    box-shadow: 0 0 3px 2px #6FCF97;
+    outline: 3px auto $color-green;
+    box-shadow: 0 0 3px 2px $color-green;
   }
 }
 
@@ -24,42 +47,44 @@ button, input{
 
 /* 공통스타일 -------------------- */
 /* 잔액, 소지금 */
-.info{ background:#EAE8FE; 
-  display: flex; justify-content: space-between; align-items: center;
-  height:3.2rem; border-radius: 0.5rem;
+.info{ 
+  background:$color-bg-purple; 
+  height:3.2rem; 
   font-weight: bold;
   font-size: 1.4rem;
   padding:0 1rem;
+  @include flex(space-between, center);
+  @include border-radius;
 }
 
 /* 버튼 스타일 */
 [class^="btn"]{
-  background: #fff;
-  border-radius: 0.5rem;
+  background:$color-white;
   box-shadow:0 0 0.4rem rgba(0, 0, 0, 0.5);
-  display: flex; justify-content: center; align-items: center;
   font-size: 1.3rem; min-height: 3.2rem;
   width:100%; height: auto;
+  @include flex;
+  @include border-radius;
 }
 .btn-get{
- background: #6327FE;
- color:#fff; 
+  background: $color-purple;
+  color:$color-white; 
 }
 
 /* 아이템 리스트 */
 .list-item-staged{
-  background: #EAE8FE;
-  border: 1px solid #BDBDBD;
+  background: $color-bg-purple;
   padding:1.2rem;
   overflow: auto;
-  border-radius: 5px;
+  @include border;
+  @include border-radius;
 
   li{
-    background: #fff;
-    border-radius: 0.5rem;
+    background: $color-white;    
     padding: 0.8rem;
-    display: flex;
-    align-items: center;
+
+    @include border-radius;
+    @include flex;
     &:not(:first-child){
       margin-top:0.6rem;
     }
@@ -72,11 +97,11 @@ button, input{
     }
     .num-counter{
       margin: 0 0 0 auto;
-      border:1px solid #BDBDBD;
-      border-radius: 0.5rem; width:3rem;
+      width:3rem;
       height: 3rem;
-      display: flex; align-items: center;
-      justify-content: center;
+      @include flex;
+      @include border;
+      @include border-radius;
     }
   }
   // 스크롤바
@@ -86,16 +111,16 @@ button, input{
 
   // 스크롤바 막대
   &::-webkit-scrollbar-thumb{
-    background-color: #fff;
-    border-radius: 5px;
+    background-color: $color-white;
     background-clip: padding-box;
-    border: 3px solid transparent;
+    @include border-radius;
+    @include border($width:3px,$color:transparent);
   }
 
   // 스크롤바 뒷 배경
   &::-webkit-scrollbar-track{
-    background-color:#EAE8FE;
-    border-radius: 5px;
+    background-color:$color-bg-purple;
+    @include border-radius;
   }
 }
 
@@ -120,7 +145,7 @@ header{
   margin: 6.7rem auto;
   & > div{
     width:36rem;
-    background:#fff;
+    background:$color-white;
   }
 }
 .machine{
@@ -149,18 +174,18 @@ header{
     }
     .txt-item{ 
       margin-top:0.7rem;
-      background:#6327FE; color:#fff; 
-      border-radius: 2rem; 
+      background:$color-purple;
+      color:$color-white; 
       font-size: 1.2rem;
-      width:7rem; height:2.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;    
+      width:7rem;
+      height:2.2rem;
+      @include flex; 
+      @include border-radius(2rem);
     }
 
     // 선택 음료
     &.select{
-      box-shadow:0 0 0 3px #6327FE;
+      box-shadow:0 0 0 3px $color-purple;
     }
 
     // 품절
@@ -174,12 +199,12 @@ header{
         margin-left: -2.6rem;
         width:5.1rem; height:2.7rem;
         padding:1px;
-        color:#fff;
+        color:$color-white;
         transform: rotate(-18deg);
         z-index: 1;
         font-size: 1.4rem;
-        color:#EAE8FE;
-        border:5px double #EAE8FE;
+        color:$color-bg-purple;
+        @include border(5px,double,$color-bg-purple);
       }
       &::after{
         content: '';
@@ -211,12 +236,12 @@ header{
   input{ 
     grid-row: 1/2;
     grid-column: 1/3;
-    border-radius: 5px;
-    border: 1px solid #BDBDBD;
     padding:0 1rem;
     height: 3.2rem;
     font-weight: bold; font-size: 1.4rem;
-    &::placeholder{ color:#BDBDBD; font-size: 1.3rem;}
+    @include border;
+    @include border-radius;
+    &::placeholder{ color:$color-gray1; font-size: 1.3rem;}
   }
   button{
     grid-row: 1/2;
@@ -248,8 +273,8 @@ header{
 .cont-myitems{
   h3{font-weight: bold;
     text-align: center;
-     font-size: 1.4rem;
-     margin-bottom: 1.3rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.3rem;
   }
   .list-item-staged{
     margin-top: 0.6rem;
@@ -266,19 +291,19 @@ header{
 
 // 총금액
 .cont-mymoney{
-  background:#fff;
+  background:$color-white;
   padding:0.9rem  2.7rem;
 }
 .cont-myitems{
-  background:#fff;
+  background:$color-white;
   padding:2.7rem;
-  border-top:2rem solid #EAE8FE;
+  @include border-direction('top',2rem,solid, $color-bg-purple)
 }
 
 
 // 반응형
 @media (max-width:768px) {
-  body{background: #fff;}
+  body{background: $color-white;}
   header .app-tit{
       width:18.8rem; height:8.8rem;;
   }
