@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    .wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+    }
+
+    .box {
+      width: 400px;
+      height: 400px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    @keyframes jh {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+
+    }
+
+    .box {
+      animation: jh 3s;
+    }
+
+    .box p {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1;
+
+    }
+
+    .flex-wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .color1 {
+      background: linear-gradient(to right, #FBF46D, #B4FE98);
+      transition: 0.3s;
+    }
+
+    .color2 {
+      background: linear-gradient(to right, #FF9292, #A2D2FF);
+      transition: 0.3s;
+    }
+
+    .color3 {
+      background: linear-gradient(to right, #77E4D4, #998CEB);
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="wrap">
+    <div class="box">
+      <img src="jh.png" alt="큐티재현" />
+      <p>큐.티.재.현 😍</p>
+    </div>
+    <div class="flex-wrap">
+      <button class="bg-color1">color1</button>
+      <button class="bg-color2">color2</button>
+      <button class="bg-color3">color3</button>
+    </div>
+  </section>
+
+
+  <script>
+    const box = document.querySelector(".box");
+    const myBtn1 = document.querySelector(".bg-color1");
+    const myBtn2 = document.querySelector(".bg-color2");
+    const myBtn3 = document.querySelector(".bg-color3");
+
+    myBtn1.addEventListener("click", function () {
+      box.classList.remove('color2', 'color3');
+      box.classList.add('color1');
+    });
+    myBtn2.addEventListener("click", function () {
+      box.classList.remove('color1', 'color3');
+      box.classList.add('color2');
+    });
+    myBtn3.addEventListener("click", function () {
+      box.classList.remove('color1', 'color2');
+      box.classList.add('color3');
+    });
+
+  </script>
+</body>
+
+</html>
