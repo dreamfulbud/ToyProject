@@ -5,325 +5,243 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>정글 시네마 영화 목록</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>펭수 움직이기</title>
+  <style>
+    @keyframes frame {
+      0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+      }
+
+      100% {
+        transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg);
+      }
+    }
+
+    @keyframes moving {
+      0% {
+        margin-top: -40px;
+        margin-left: 10px;
+        transform: rotateX(-90deg) rotateY(65deg) rotateZ(15deg) translateZ(-30px) scale(0.9, 1.1);
+      }
+
+      100% {
+        margin-top: -10px;
+        margin-left: 40px;
+        transform: rotateX(-90deg) rotateY(65deg) rotateZ(15deg) translateZ(-30px) scale(1);
+      }
+    }
+
+
+    body {
+      background: rgb(188, 236, 255);
+    }
+
+    h1 {
+      text-align: center;
+      color: #268bff;
+      text-shadow: 1px 1px 1px #fff;
+      margin: 30px auto;
+    }
+
+    h1 strong {
+      color: #124dbb;
+    }
+
+    .warp {
+      width: 600px;
+      margin: 50px auto 0;
+    }
+
+    .section-board {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      transform-style: preserve-3d;
+      /* transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg); */
+      animation: frame 1s ease forwards;
+    }
+
+    .board-item {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      transition: all 0.3s;
+      transform-style: preserve-3d;
+    }
+
+    .board-item:hover {
+      top: -10px;
+      left: -10px;
+    }
+
+    .board-item::after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(1, 85, 182, 0.8);
+      border: 2px solid rgba(1, 85, 182, 1);
+      box-sizing: border-box;
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+
+    .board-item:hover::after {
+      top: 20px;
+      left: 20px;
+    }
+
+    .board-item label {
+      border-radius: 10px;
+      cursor: pointer;
+      background: #B6D8FF;
+    }
+
+
+    .board-item:nth-child(3n) label {
+      background: linear-gradient(135deg, #5FB7FF 0%, #BAEBFF 35%, #c8edfc 40%, #BAEBFF 45%, #71bfff 100%)
+    }
+
+    .board-item:nth-child(3n-1) label {
+      background: linear-gradient(135deg, #5cd1ff 0%, #B9E6FF 30%, #DCF1FF 40%, #B9E6FF 50%, #5cd1ff 100%)
+    }
+
+    .board-item:nth-child(3n-2) label {
+      background: linear-gradient(135deg, #58a6ff 0%, #B4D7FF 30%, #99C8FF 40%, #B4D7FF 60%, #2589FF 100%)
+    }
+
+    .board-item input {
+      position: absolute;
+      appearance: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+
+    }
+
+    .board-item input:focus,
+    .board-item input:hover {
+      box-shadow: 0 0 40px 5px rgba(0, 255, 221, 0.8);
+    }
+
+    .board-item label {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+
+    }
+
+    .board-item input:checked+label {
+      font-weight: bold;
+      transform-style: preserve-3d;
+    }
+
+    .board-item label::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      clip-path: circle(70%);
+      top: 0;
+      left: 0;
+      background: url(./pengsoo.png) no-repeat 50% 50%;
+      background-size: contain;
+      transform: rotateX(-90deg) rotateY(65deg) rotateZ(15deg) translateZ(-30px);
+      transform-origin: bottom;
+      opacity: 0;
+      transition: opacity 0.3s;
+      animation: moving 0.5s alternate infinite;
+    }
+
+    .board-item input:checked+label::after {
+      opacity: 1;
+    }
+  </style>
+
 </head>
 
 <body>
-  <h1 class="a11y-hidden">정글 시네마</h1>
+  <header>
+    <h1><strong>펭수</strong>를 움직여보세요!</h1>
+  </header>
+  <div class="warp">
 
-  <ul class="skip">
-    <li><a href="#menu">메뉴 바로가기</a></li>
-    <li><a href="#movie">현재 상영 영화 바로가기</a></li>
-    <li><a href="#footer">기업정보 바로가기</a></li>
-  </ul>
-
-
-  <div class="wrap">
-    <header>
-      <h2>정글 시네마 영화 목록</h2>
-      <nav>
-        <h3 class="a11y-hidden">영화 정보 목록</h3>
-        <ul id="menu">
-          <li class="on"><a href="#">현재상영영화</a></li>
-          <li><a href="#">개봉예정영화</a></li>
-          <li><a href="#">박스오피스</a></li>
-        </ul>
-      </nav>
-    </header>
-    <!-- main 태그는 한번만 사용 가능! / article, section 안에 main태그는 안됨! -->
-    <main id="movie">
-      <h3 class="a11y-hidden">현재 상영 영화 목록</h3>
-      <ul>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster1.png" alt="위니브 월드 : 새로운 시대" />
-            </a>
-            <h4>위니브 월드 : 새로운 시대</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster2.png" alt="눈떠보니 코딩테스트 전날 with JAVA" />
-            </a>
-            <h4>눈떠보니 코딩테스트 전날 with JAVA</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster3.jpg" alt="파이썬 부트캠프" />
-            </a>
-            <h4>파이썬 부트캠프</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster4.png" alt="파이큐티의 사랑" />
-            </a>
-            <h4>파이큐티의 사랑</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster5.png" alt="NGINX의 춤" />
-            </a>
-            <h4>NGINX의 춤</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster6.png" alt="어쩌다 밋업" />
-            </a>
-            <h4>어쩌다 밋업</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster7.jpg" alt="파이게임 어드벤처" />
-            </a>
-            <h4>파이게임 어드벤처</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <a class="thumb" href="#" title="영화 상세페이지로 이동">
-              <img src="./img/poster8.png" alt="MBIT는 내 운명" />
-            </a>
-            <h4>MBIT는 내 운명</h4>
-            <dl>
-              <div>
-                <dt>개요</dt>
-                <dd>판타지</dd>
-              </div>
-              <div>
-                <dt>평점</dt>
-                <dd class="star">9.05</dd>
-              </div>
-              <div>
-                <dt>개봉</dt>
-                <dd>2021.03.27</dd>
-              </div>
-              <div>
-                <dt>출연</dt>
-                <dd>라이캣, 소울곰, 게리씨</dd>
-              </div>
-            </dl>
-            <div class="btn-g">
-              <a href="#">예매하기</a>
-              <span class="line"></span>
-              <a href="#" class="play">예고편</a>
-            </div>
-          </article>
-        </li>
-      </ul>
-    </main>
-  </div>
-  <footer id="footer">
-    <section class="inner">
-      <h2 class="a11y-hidden">기업정보</h2>
-      <p><strong>Jungle Cinema</strong></p>
-      <div class="info">
-        <dl>
-          <div>
-            <dt class="a11y-hidden">기업명</dt>
-            <dd>(주) 정글 시네마</dd>
-          </div>
-          <div>
-            <dt>대표</dt>
-            <dd>라이언</dd>
-          </div>
-          <div>
-            <dt>사업자 번호</dt>
-            <dd>000-0000-0000</dd>
-          </div>
-          <div>
-            <dt class="a11y-hidden">업종</dt>
-            <dd>광고 영화 및 비디오물 제작업</dd>
-          </div>
-          <div>
-            <dt>주소</dt>
-            <dd>서울특별시</dd>
-          </div>
-        </dl>
-        <p><small>ⓒ The Jungle</small></p>
+    <section class="section-board">
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-1" checked />
+        <label for="radio-1"></label>
       </div>
-
-      <h3 class="a11y-hidden">SNS 목록</h3>
-      <ul class="sns-list">
-        <li><a href="#"><img src="./img/sns_facebook.png" alt="facebook" /></a></li>
-        <li><a href="#"><img src="./img/sns_instagram.png" alt="instagram" /></a></li>
-        <li><a href="#"><img src="./img/sns_twitter.png" alt="twitter" /></a></li>
-      </ul>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-2" />
+        <label for="radio-2"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-3" />
+        <label for="radio-3"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-4" />
+        <label for="radio-4"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-5" />
+        <label for="radio-5"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-6" />
+        <label for="radio-6"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-7" />
+        <label for="radio-7"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-8" />
+        <label for="radio-8"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-9" />
+        <label for="radio-9"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-10" />
+        <label for="radio-10"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-11" />
+        <label for="radio-11"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-12" />
+        <label for="radio-12"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-13" />
+        <label for="radio-13"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-14" />
+        <label for="radio-14"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-15" />
+        <label for="radio-15"></label>
+      </div>
+      <div class="board-item">
+        <input type="radio" name="radio" id="radio-16" />
+        <label for="radio-16"></label>
+      </div>
     </section>
-  </footer>
+  </div>
 </body>
 
 </html>
