@@ -1,5 +1,5 @@
 # ToyProject
-## [ToyPorject List](https://dreamfulbud.github.io/ToyProject/)
+## [ToyProject List](https://dreamfulbud.github.io/ToyProject/)
   - [할미 캐릭터 애니메이션](https://dreamfulbud.github.io/ToyProject/P_01)
   - [얼음 위 펭수](https://dreamfulbud.github.io/ToyProject/P_02)
   - [음료 자판기](https://dreamfulbud.github.io/ToyProject/P_03)
