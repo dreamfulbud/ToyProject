@@ -1,0 +1,316 @@
+@charset "utf-8";
+
+.hidden {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+
+  &::after {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+
+}
+
+article {
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+//input button
+input,
+.btn {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 0 1rem;
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.btn {
+  border-radius: 0.3rem;
+  border: none;
+  background: #FDD65F;
+  color: #000;
+  position: relative;
+  font-weight: bold;
+  padding: 0 2rem;
+  border-radius: 0 0.4rem 0.4rem 0;
+
+  &:focus,
+  &:hover {
+    border-color: #ffc310;
+  }
+}
+
+//hello
+.cont-greeting {
+  margin-top: 4rem;
+
+  label {
+    display: block;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  input,
+  .btn {
+    height: 4rem;
+  }
+
+  .greeting {
+    display: inline-block;
+    font-size: 5rem;
+
+    @media (max-width:640px) {
+      font-size: 3rem;
+    }
+
+    padding-top: 1rem;
+    border-bottom: 3px solid #fff;
+  }
+}
+
+//Todo list
+.cont-todo {
+  position: absolute;
+  bottom: 16rem;
+  right: 30px;
+
+  @media (max-width:640px) {
+    margin: 2rem auto;
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+
+  .todo-form {
+    display: flex;
+  }
+
+  input,
+  .btn {
+    font-size: 1.4rem;
+    height: 3rem;
+  }
+
+  input {
+    flex-grow: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-width: 1px 0 1px 1px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: border 0.3s;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      transform: border 0.3s;
+    }
+  }
+
+  .btn {
+    padding: 0 1rem;
+    border: 1px solid rgba(253, 213, 95, 0.3);
+    color: #ffc310;
+    background: rgba(253, 213, 95, 0.2);
+    transition: border 0.3s, background-color 0.3s;
+
+    &:hover {
+      border: 1px solid rgba(253, 213, 95, 0.6);
+      background: rgba(253, 213, 95, 0.3);
+    }
+  }
+
+  .todo-list {
+    margin-top: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+
+
+    li {
+      font-size: 1.3rem;
+      text-align: left;
+      padding: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-left: 1rem;
+      margin-right: 1rem;
+
+      &:not(:first-child) {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      &:first-child {
+        margin-top: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .del {
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 100;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0.6;
+    border-radius: 2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0;
+    transition: all 0.3s;
+    margin-left: 0.8rem;
+
+    &:hover {
+      opacity: 1;
+      color: rgb(255, 55, 55);
+      border: 1px solid rgba(255, 0, 0, 0.2);
+
+    }
+  }
+}
+
+//시계
+.cont-time {
+  width: 400px;
+  max-width: calc(100% - 30px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (max-width:640px) {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+    margin-top: 4rem;
+
+  }
+
+
+
+  .date {
+    text-align: center;
+    font-size: 3.6rem;
+
+    @media (max-width:640px) {
+      font-size: 2.4rem;
+    }
+
+    letter-spacing: 0.05rem;
+    margin-bottom: 1rem;
+    font-weight: 200;
+  }
+
+  .cont-clock {
+    justify-content: center;
+    align-items: center;
+    font-size: 20rem;
+    line-height: 1;
+
+    @media (max-width:640px) {
+      font-size: 10rem;
+    }
+
+    .flex-column {
+      margin-left: 0.8rem;
+      line-height: 1.2;
+      font-size: 0.3em;
+      font-weight: 200;
+
+      .ampm {
+        opacity: 0.8;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 0.2rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .seconds {
+        font-size: 1.1em;
+      }
+    }
+
+  }
+}
+
+//명언
+.cont-quote {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2.4rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  margin-top: 2rem;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width:640px) {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: translateX(0);
+    width: 100%;
+  }
+
+  .quote {
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+    line-height: 1.4;
+  }
+
+  .author {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-top: 0.8rem;
+
+    &::before {
+      content: '- ';
+    }
+
+    &::after {
+      content: ' -';
+    }
+  }
+}

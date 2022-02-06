@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momentum App</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.compact.css">
+</head>
+
+<body>
+  <h1 class="a11y-hidden">myWeb</h1>
+
+  <!-- 시계 -->
+  <article class="cont-greeting">
+    <form id="login-form" class="hidden">
+      <label for="user-name">What is your name?</label>
+      <input type="text" id="user-name" placeholder="Name" required maxlength="15" />
+      <button class="btn" type="submit">Login</button>
+    </form>
+    <h2 class="greeting hidden"></h2>
+  </article>
+  <!-- //인사 -->
+
+  <!-- 시계 -->
+  <article class="cont-time">
+    <h3 class="a11y-hidden">시계</h3>
+    <div>
+      <p class="date">2021.00.00.THU</p>
+      <p class="cont-clock flex">
+        <span class="clock">00:00:</span>
+        <span class="flex-column">
+          <span class="ampm">AM</span>
+          <span class="seconds">00</span>
+        </span>
+      </p>
+    </div>
+  </article>
+  <!-- // 시계 -->
+
+  <!-- 오늘의 명언 -->
+  <article class="cont-quote">
+    <h3 class="a11y-hidden">오늘의 명언</h3>
+    <p class="quote"></p>
+    <p class="author"></p>
+  </article>
+  <!--// 오늘의 명언 -->
+
+  <!-- To do List -->
+  <article class="cont-todo">
+    <h3 class="a11y-hidden">Todo List</h3>
+    <form class="todo-form">
+      <input type="text" placeholder="To do List" class="todo-input" maxlength="30" required />
+      <button type="submit" class="btn">Enter</button>
+    </form>
+    <ul class="todo-list">
+    </ul>
+  </article>
+  <!-- //To do List -->
+  <!-- 날씨 -->
+  <article class="cont-weather">
+    <h3 class="a11y-hidden">날씨</h3>
+    <p></p>
+    <p></p>
+  </article>
+  <!-- // 날씨 -->
+
+  <script src="./js/greeting.js"></script>
+  <script src="./js/clock.js"></script>
+  <script src="./js/background.js"></script>
+  <script src="./js/quotes.js"></script>
+  <script src="./js/todo.js"></script>
+  <!-- <script src="./js/weaher.js"></script> -->
+
+
+
+
+
+
+
+
+  <script>
+    console.log("Hello World");
+
+    let hello = "Hello Color";
+  </script>
+
+  <!-- <script src="./js/weaher.js"></script> -->
+</body>
+
+</html>
